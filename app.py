@@ -2,20 +2,18 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-Usuarios = [
-    {"id": 1, "nome": "Mark Ribeiro dos Santos"},
-    {"id": 2, "nome": "Charles Leclerc"},
-    {"id": 3, "nome": "Mr. Sixseven"},
-    {"id": 4, "nome": "Raphael Veiga"},
-    {"id": 5, "nome": "Abel Ferreira"},
+Livros = [
+    {"id": 1, "nome": "Star Wars: A vingança dos sith"},
+    {"id": 2, "nome": "Vivendo uma vida autentica"},
+    {"id": 3, "nome": "O principe"},
 ]
 
-@app.route("/usuarios", methods=["GET"])
+@app.route("/livros", methods=["GET"])
 def home():
-    return jsonify({"mensagem": "API de Usuários - Acesse /usuarios"})
+    return jsonify({"mensagem": "API de Livros - Acesse /livros"})
 
 @app.route("/", methods=["GET"])
-def listar_usuarios():
+def listar_livros():
     return jsonify(__name__)
 
 if __name__ == "_main_":
